@@ -29,3 +29,10 @@ La mod aggiunge numerose batterie al gioco di svariate capacità, con la possibi
 2 batterie in serie (raddoppia la tensione) e 2 in parallelo (raddoppia la capacità)
 
 ![immagine](https://user-images.githubusercontent.com/12469744/206925595-bc681222-f10e-40c5-9f4c-9e986fe59356.png)
+
+
+## Batterie esauste
+
+Le pile esauste possono essere riciclate:
+
+![immagine](https://user-images.githubusercontent.com/12469744/206925776-8c39d356-3454-4a87-9d8d-8a876cc0b281.png)
