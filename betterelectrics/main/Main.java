@@ -14,7 +14,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.src.BaseMod;
 
-@Mod(name="BetterElectrics", version="1.0", modid="betterelectrics", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders;")
+@Mod(name="BetterElectrics", version="1.2.0", modid="betterelectrics", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders;")
 public class Main extends BaseMod{
 	
 	//@SidedProxy(clientSide="betterelectrics.main.proxies.ClientProxy", serverSide="betterelectrics.main.proxies.ServerProxy")
@@ -22,7 +22,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.0";
+		return "1.2.0";
 	}
 
 	@Override
@@ -44,12 +44,12 @@ public class Main extends BaseMod{
 		//Blocks.registerLanguages();
 		Items.initItems();
 		Items.registerLanguages();
-		CraftingHandler.AddCraftings();
 		//TileEntities.registerTileEntities();
 	}
 	
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 	    //proxy.postInit(event);
+		CraftingHandler.AddCraftings();
 	}
 }

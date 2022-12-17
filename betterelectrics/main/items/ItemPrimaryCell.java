@@ -50,15 +50,13 @@ public class ItemPrimaryCell extends Item implements IBoxable, IElectricItem {
         this.totalCapacity = capacity * parallel;
         this.dischargeSpeed = specificPower * parallel; 
         this.chemistry = chemistry;
-
-
+        this.series = series;
 	}
     
 	@Override
     public boolean canBeStoredInToolbox(final ItemStack itemstack) {
         return true;
     }
-
 
 	@Override
 	public boolean canProvideEnergy() {
@@ -109,7 +107,7 @@ public class ItemPrimaryCell extends Item implements IBoxable, IElectricItem {
 	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 		ElectricItem.charge(par1ItemStack, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
 	}
-	
+		
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
@@ -117,5 +115,6 @@ public class ItemPrimaryCell extends Item implements IBoxable, IElectricItem {
 		super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
 		par3List.add("\247bType: \247eNon-rechargeable");
 		par3List.add("\247bChemistry: \247e" + chemistry);
+		par3List.add("\247bTier: \247e" + series);
 	}
 }

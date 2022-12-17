@@ -18,57 +18,68 @@ public class CraftingHandler {
 
 	public static void AddCraftings() {
 		try {
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.MgMnO2Cell, 1), 
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.MgMnO2Cell), new Object[] { new ItemStack(Items.MgMnO2BoxedCell)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.HgOCell), new Object[] { new ItemStack(Items.HgOBoxedCell)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.AlkalineCell), new Object[] { new ItemStack(Items.AlkalineBoxedCell)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Ag2OCell), new Object[] { new ItemStack(Items.Ag2OBoxedCell)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.LiSOCl2Cell), new Object[] { new ItemStack(Items.LiSOCl2BoxedCell)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.LiFeS2Cell), new Object[] { new ItemStack(Items.LiFeS2BoxedCell)});
+			
+		GregtechCompat.addBenderRecipe(GregtechCompat.getGregTechItem(0, 1, 66), new ItemStack(Items.thinInoxPlate, 16), 60, 10);
+			
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.MgMnO2BoxedCell, 8), 
 				new Object [] {" W ", "IMI", "IGI",
-						'W', ic2.api.Items.getItem("copperCableItem"),
-						'I', "ingotRefinedIron",
-						'M', "dustMagnesium",
-						'G', "dustManganese"
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
+						'M', "dustSmallMagnesium",
+						'G', "dustSmallManganese"
 						});
 		
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.HgOCell, 1), 
-				new Object [] {" W ", "ZHZ", "ZHZ",
-						'W', ic2.api.Items.getItem("copperCableItem"),
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.HgOBoxedCell, 8), 
+				new Object [] {" W ", "IZI", "IHI",
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
 						'H', "molecule_1hg",
 						'Z', "ingotZinc"
 						});
 		
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.AlkalineCell, 1), 
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.AlkalineBoxedCell, 8), 
 				new Object [] {" W ", "IZI", "IGI",
-						'W', ic2.api.Items.getItem("copperCableItem"),
-						'I', "ingotRefinedIron",
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
 						'Z', "ingotZinc",
-						'G', "dustManganese"
+						'G', "dustSmallManganese"
 						});
 		
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.Ag2OCell, 1), 
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.Ag2OBoxedCell, 8), 
 				new Object [] {" W ", "IZI", "ISI",
-						'W', ic2.api.Items.getItem("copperCableItem"),
-						'I', "ingotRefinedIron",
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
 						'Z', "ingotZinc",
 						'S', "ingotSilver"
 						});
 		
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.LiSOCl2Cell, 1), 
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.LiSOCl2BoxedCell, 8), 
 				new Object [] {" W ", "CSC", "ILI",
-						'W', ic2.api.Items.getItem("copperCableItem"),
-						'I', "ingotRefinedIron",
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
 						'C', "molecule_1cl",
 						'S', "molecule_1s",
 						'L', "molecule_1li"
 						});
 		
-		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.LiFeS2Cell, 1), 
+		CraftingHelpers.addShapedOreRecipe(new ItemStack(Items.LiFeS2BoxedCell, 8), 
 				new Object [] {" W ", "FSF", "ILI",
-						'W', ic2.api.Items.getItem("copperCableItem"),
-						'I', "ingotRefinedIron",
+						'W', "nuggetCopper",
+						'I', new ItemStack(Items.thinInoxPlate, 1),
 						'F', "ingotIron",
 						'S', "molecule_1s",
 						'L', "molecule_1li"
 						});
 		
 		} catch(Exception e) {
-			System.out.println("Errore durante l'aggiunta di ricette di celle primarie: " + e);
+			System.err.println("Errore durante l'aggiunta di ricette di celle primarie: " + e);
 		}
 		
 		try {
@@ -111,7 +122,7 @@ public class CraftingHandler {
 			
 			
 		} catch(Exception e) {
-			System.out.println("Errore durante l'aggiunta di ricette di configurazione 1s2p: " + e);
+			System.err.println("Errore durante l'aggiunta di ricette di configurazione 1s2p: " + e);
 		}
 		
 		try {
@@ -153,7 +164,7 @@ public class CraftingHandler {
 					});
 			
 		} catch(Exception e) {
-			System.out.println("Errore durante l'aggiunta di ricette di configurazione 2s1p: " + e);
+			System.err.println("Errore durante l'aggiunta di ricette di configurazione 2s1p: " + e);
 		}
 		
 		try {
@@ -188,7 +199,18 @@ public class CraftingHandler {
 					});
 			
 		} catch(Exception e) {
-			System.out.println("Errore durante l'aggiunta di ricette di configurazione 2s2p: " + e);
+			System.err.println("Errore durante l'aggiunta di ricette di configurazione 2s2p: " + e);
+		}
+		
+		try {
+			GregtechCompat.addCentrifugeRecipe(new ItemStack(Items.deadBattery, 64), 0,
+					new ItemStack(Item.ingotIron, 64),
+					GregtechCompat.getGregTechItem(1, 8, 244),
+					GregtechCompat.getGregTechItem(1, 4, 243), 
+					GregtechCompat.getGregTechItem(1, 2, 12)
+					, 200);
+		} catch (Exception e) {
+			System.err.println("Gregtech di merda, errore gregtech, gregorius suca.");
 		}
 	}
 }
